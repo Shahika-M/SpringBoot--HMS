@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HMS homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Hospital Management System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="">Home</a></li>
+      <!--  <li class="nav-item"><a  th:href = "file:///C:/Users/hp/Pictures/hms2.jpeg" class=" nav-link btn btn-md mb-3 ">  Home </a></li> -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a th:href="@{/gotoadminpatient}"  class=" nav-link btn btn-md mb-3 ">Patient webpage</a></li>
+            <li class="nav-item"><a th:href="@{/gotoadmindoctor}"  class=" nav-link btn btn-md mb-3 ">Doctor webpage</a></li>
+            <li><a href="#"> Recptionist webpage</a></li>
+          </ul>
+        </li>
+       <!--  <li><a href="#">Doctor</a></li> -->
+       <li class="nav-item"><a  th:href = "@{/gotodoctor}" class=" nav-link btn btn-md mb-3 ">  Doctor </a></li>
+        
+       <!--   <li><a href="@{/getPatients}">Patient</a></li> -->
+       <li class="nav-item"><a  th:href = "@{/gotopatient}" class=" nav-link btn btn-md mb-3 ">  Patient </a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+       <!--   <li><a href="@{/registration}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>  -->
+        <li class="nav-item"><a  th:href = "@{/registration}" class=" nav-link btn btn-md mb-3 "> Sign Up </a></li>
+       
+       <!--   <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+       <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="nav-item"><a th:href="@{/gotodoctor}"  class=" nav-link btn btn-md mb-3 ">As Doctor</a></li>
+            <li class="nav-item"><a th:href="@{/gotopatient}"  class=" nav-link btn btn-md mb-3 ">As Patient</a></li>
+            <li><a href="#"> As Receptionalist</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+ <!--   <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://i.insider.com/5f4024f189aff80028ab7494" alt="Los Angeles" style="width:80%;">
+
+
+      </div> -->
+  
+
+
+</body>
+</html>
+

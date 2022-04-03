@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>Add Patient details</title>
+</head>
+<body class="container">
+
+<h1>Add patient Details</h1>
+
+  <form th:action="@{/updateFormPatient/{id}}" th:object="${patient}" method="post" class="form needs-validation"> 
+ 
+ 
+  <!-- <form th:action="@{/updatePatient/{id}(id=${patient.id})}" th:object="${patient}" method="post"> -->
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input class="form-control" type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+        <div  th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+    </div>
+    
+     <div class="form-group">
+        <label for="age">Age</label>
+        <input class="form-control" type="text" th:field="*{age}" id="age" placeholder="age">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+    </div>
+    
+    <div class="form-group">
+        <label for="weight">Weight</label>
+        <input class="form-control" type="tel" th:field="*{weight}" id="weight" placeholder="weight">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"></div>
+    </div>
+     <div class="form-group">
+       <label for="bloodgrp"> Blood Group:</label>
+      <!--<input type="bloodgroup" class="form-control" id="bloodgroup" placeholder="Enter blood group" name="blood group"> -->
+       <select id="bloodgroup" name="bloodgroup">
+    <option value="a">Ap</option>
+   <option value="a">An</option>
+    <option value="b+ve">B+ve</option>
+    <option value="ab+ve">AB+ve</option>
+     <option value="ab-ve">AB-ve</option>
+    <option value="o+ve">O+ve</option>
+      </select>
+     </div>
+    <div class="form-group">
+       <label for="gender"> Gender:</label>
+     <select id="gender" name="gender">
+    <option value="female">Female</option>
+   <option value="male">Male</option>
+    <option value="transgender">Transgender</option>
+    
+     </select>
+  </div>
+  
+   <div class="form-group">
+        <label for="city">City</label>
+        <input class="form-control" type="text" th:field="*{city}" id="city" placeholder="city">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></div>
+    </div>
+       <div class="form-group">
+        <label for="phoneNo">Phone No</label>
+        <input class="form-control" type="tel" th:field="*{PhoneNo}" id="weight" placeholder="phone no">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNo')}" th:errors="*{phoneNo}"></div>
+    </div>
+    
+     <div class="form-group">
+       <label for="specilization"> Specialization:</label>
+     <select id="specialization" name="specialization">
+    <option value="dental">Dental</option>
+   <option value="cardiology">Cardiology</option>
+    <option value="ocular">Ocular</option>
+    <option value="neurology">Neurology</option>
+     <option value="dermatalogy">Dermatology</option>
+    <option value="respiratory">Respiratory</option>
+      <option value="pediatrics">Pediatrics</option>
+    <option value="general">General</option>
+
+     </select>
+   </div>
+   
+    <div class="form-group">
+        <label for="disease">Disease</label>
+        <input class="form-control" type="text" th:field="*{disease}" id="disease" placeholder="disease">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('disease')}" th:errors="*{disease}"></div>
+    </div>
+    
+     <div class="form-group">
+        <label for="username">UserName</label>
+        <input class="form-control" type="text" th:field="*{username}" id="username" placeholder="username">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+    </div>
+    
+     <div class="form-group">
+        <label for="pwd">Password</label>
+        <input class="form-control" type="text" th:field="*{pwd}" id="pwd" placeholder="pwd">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('pwd')}" th:errors="*{pwd}"></div>
+    </div>
+    
+    
+    <input type="submit"  class="btn btn-primary mb-3" value="Save">
+   
+    <a  th:href = "@{/getPatients}" class=" btn btn-primary btn-md mb-3 float-right"> Patient List</a></li>
+</form>
+
+</body>
+</html>
